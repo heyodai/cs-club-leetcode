@@ -17,19 +17,19 @@ class Solution:
         }
 
         # 2. Create a variable to store the total
-        # 3. convert string to list
+        # 3. Convert string to list
         total = 0
         s = list(s)
 
-        # 4. loop through the string
+        # 4. Loop through the string
         for i in range(len(s)):
-            # 5. If the current roman numeral is less than the next roman numeral
+            # 5. If the current roman numeral is less than the next roman numeral...
             if roman_numerals[s[i]] > roman_numerals[s[i - 1]] and i > 0:
-                # 6. Subtract the current roman numeral from the total
+                # 6. Subtract previous input and add the difference
                 total -= roman_numerals[s[i - 1]]
                 total += (roman_numerals[s[i]] - roman_numerals[s[i - 1]])
             else:
-                # 7. Add the current roman numeral to the total
+                # 7. Otherwise, add the current roman numeral to the total
                 total += roman_numerals[s[i]]
 
         # 8. Return the total    
